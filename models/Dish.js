@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
                 key: "id",
               },
         },
-        catgeory:{
+        category:{
             type:Sequelize.STRING,
             allowNull:false,
             references: {
@@ -61,7 +61,7 @@ module.exports = (sequelize, DataTypes) => {
 
 Dishes.associate= function(models){
     Dishes.belongsTo(models.Restaurants, { foreignKey: "restaurantId" });
-    Dishes.belongsTo(models.DishCategories, { foreignKey: "catgeory" });
+    Dishes.belongsTo(models.DishCategories, { foreignKey: "category" });
     Dishes.hasMany(models.DishItems, { foreignKey: "dishId" });
 };
 return Dishes

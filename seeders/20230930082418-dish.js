@@ -16,7 +16,7 @@ module.exports = {
         description: faker.lorem.sentence(), 
         contains: faker.lorem.words(5), 
         calories: faker.datatype.number({ min: 50, max: 1000 }), 
-        category: faker.datatype.number({ min: 1, max: 5 }),
+        category: faker.datatype.number({ min: 1, max: 10 }),
         price: faker.datatype.number({ min: 5, max: 50, precision: 0.01 }), 
         image: await uploadImageFromUrl(faker.image.food()), 
         activeStatus: true, 

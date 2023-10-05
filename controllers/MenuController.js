@@ -133,32 +133,27 @@ async function createDish(req, res) {
 
 //--------- Pagination Added----------------
 async function readDishByRestaurant(req, res) {
-    const { userId } = req.user;
     const { page = 1, perPage = 10 } = req.query;
   
     try {
-      const userFind = await User.findOne({ where: { id: userId } });
-  
-      if (!userFind) {
-        return res.status(400).json({ error: 'User Not Found!' });
-      }
-  
+
       const offset = (page - 1) * perPage;
       const limit = parseInt(perPage);
   
       const dishes = await Dish.findAndCountAll({
-        where: { restaurantId: req.params.id },
+        where: { restaurantId: req.params.id, activeStatus: true },
         include: [db.DishItems, db.DishCategories],
         limit,
         offset,
       });
-  
+      const dishCategory = await DishCategories.findAll();
       const totalPages = Math.ceil(dishes.count / perPage);
   
       return res.status(200).json({
         message: 'Dishes fetched successfully',
         data: {
-          dishes: dishes.rows,
+        categories: dishCategory,  
+          items: dishes.rows,
           currentPage: page,
           totalPages,
         },

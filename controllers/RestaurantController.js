@@ -1,4 +1,5 @@
 const db = require('../models');
+const { uploadImage } = require('../utils/imageUpload');
 
 const User = db.Users;
 const Restaurant = db.Restaurants;
@@ -16,6 +17,14 @@ async function createRestaurant(req, res) {
     if (!userFind) {
       return res.status(400).json({ error: 'User Not Found!.' });
     }
+    
+    if (req.files) {
+      const results = await uploadImage(req.files.imageFile);
+      if (results.error) {
+          res.send(results);
+      }
+      req.body.imagePath = results.fileName;
+  }
 
     const newRestaurant = new Restaurant({
       name,
@@ -27,6 +36,7 @@ async function createRestaurant(req, res) {
       longitude,
       latitude,
       deliveryRatePerMile,
+      bannerImage: req.body.imagePath,
       userId,
     });
     await newRestaurant.save();

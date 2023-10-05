@@ -6,7 +6,7 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     const dishes = [];
 
-    const numberOfDishes = 200;
+    const numberOfDishes = 50;
 
     for (let i = 1; i <= numberOfDishes; i++) {
       const dish = {
@@ -17,7 +17,7 @@ module.exports = {
         calorie: parseFloat(faker.datatype.number({ min: 50, max: 500, precision: 0.01 })), 
         activeStatus: faker.datatype.boolean(),
         quantityPerOrder: faker.datatype.number({ min: 1, max: 5 }),
-        dishId: faker.datatype.number({ min: 1, max: 10 }), 
+        dishId: faker.datatype.number({ min: 104, max: 110 }), 
         createdAt: new Date(),
         updatedAt: new Date(),
       };

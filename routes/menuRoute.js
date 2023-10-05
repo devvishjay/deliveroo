@@ -10,7 +10,7 @@ router.post('/createCategory',authenticateToken, MenuController.createDishCatego
 router.get('/readDishCategory',authenticateToken, MenuController.readDishCategory);
 router.delete('/deleteDishCategory/:id',authenticateToken, MenuController.deleteDishCategory);
 router.post('/createDish',authenticateToken,validateCreateDishData, MenuController.createDish);
-router.get('/readDishes/:id',authenticateToken, MenuController.readDishByRestaurant);
+router.get('/readDishes/:id', MenuController.readDishByRestaurant);
 router.put('/updateDish/:id',authenticateToken, MenuController.updateDish);
 router.delete('/deleteDish/:id',authenticateToken, MenuController.deleteDish);
 router.post('/createDishItem',authenticateToken,validateCreateDishItemData, MenuController.createDishItem);

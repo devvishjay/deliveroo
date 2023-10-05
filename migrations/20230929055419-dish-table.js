@@ -47,7 +47,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      catgeory:{
+      category:{
         type:Sequelize.STRING,
         allowNull:false,
     },

@@ -50,6 +50,13 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      tags:{
+        type: Sequelize.JSON,
+      },
+      bannerImage:{
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       activeStatus: {
         type: Sequelize.BOOLEAN,
         allowNull: false,

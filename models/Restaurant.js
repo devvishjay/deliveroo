@@ -44,6 +44,13 @@ module.exports = (sequelize, DataTypes) => {
         type: Sequelize.INTEGER,
         allowNull: true,
       },
+      tags:{
+        type: Sequelize.JSON,
+      },
+      bannerImage:{
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,

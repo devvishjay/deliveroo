@@ -1,13 +1,15 @@
 'use strict';
 const { faker } = require('@faker-js/faker');
 const { QueryTypes } = require('sequelize');
+const { uploadImageFromUrl } = require('../utils/imageUpload');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
     const restaurants = [];
     for (let i = 0; i < 10; i++) {
       const restaurant = {
-        name: faker.company.name(), // Updated to use companyName() instead of name()
+        name: faker.company.name(), 
         createdAt: new Date(),
         updatedAt: new Date(),
         openTime: "09:00 AM",
@@ -17,8 +19,11 @@ module.exports = {
         country: faker.address.country(),
         longitute: faker.address.longitude(),
         latitute: faker.address.latitude(),
-        deliveryRatePerMile: faker.datatype.float({ min: 1, max: 10 }), // Updated to use datatype.float() instead of random.numeric()
-        userId: faker.datatype.number({ min: 1, max: 3 }), // Updated to use datatype.number() instead of random.numeric()
+        deliveryRatePerMile: faker.datatype.float({ min: 1, max: 10 }), 
+        userId: faker.datatype.number({ min: 1, max: 3 }), 
+        tags: JSON.stringify(['Chicken', 'Salads', 'Healthy']), 
+        bannerImage: await uploadImageFromUrl(faker.image.food()), 
+        activeStatus: true,
       };
       restaurants.push(restaurant);
     }

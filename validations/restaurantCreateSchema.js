@@ -13,10 +13,8 @@ const createRestaurantSchema = {
     country: { type: 'string' },
     longitude: { type: 'string' },
     latitude: { type: 'string' },
-    deliveryRatePerMile: { type: 'integer' }, 
-    userId: { type: 'integer' },
   },
-  required: ['name', 'address', 'city', 'country', 'deliveryRatePerMile', 'userId'],
+  required: ['name', 'address', 'city', 'country'],
 };
 
 const validateCreateRestaurant = ajv.compile(createRestaurantSchema);
