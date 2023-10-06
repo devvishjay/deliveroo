@@ -28,16 +28,14 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository to your local machine:
 
-   ```bash
-   git clone https://github.com/your-username/express-sequelize-project.git
+ git clone https://github.com/your-username/express-sequelize-project.git
 Navigate to the project directory:
 
-bash
 Copy code
 cd express-sequelize-project
 Install the project dependencies:
 
-bash
+
 Copy code
 npm install
 
@@ -65,9 +63,5 @@ Copy code
 npm start
 The server will start on port 5000 (or the port you specified in the .env file). You can access the API at http://localhost:5000.
 
-Usage
-Use this project as a starting point for your Express.js and Sequelize applications.
-Define your database models in the models directory.
-Define your controllers  in the controller directory.
-Implement your API routes in the routes directory.
+
 
