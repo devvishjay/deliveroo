@@ -1,15 +1,6 @@
 <!-- Project Title -->
 <h1 align="center">Deliveroo Backend</h1>
 
-<!-- Project Description -->
-<p align="center">A boilerplate project for building web applications with Express.js and Sequelize</p>
-
-<!-- Shields -->
-<p align="center">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/your-username/express-sequelize-project">
-  <img alt="GitHub issues" src="https://img.shields.io/github/issues/your-username/express-sequelize-project">
-  <img alt="GitHub license" src="https://img.shields.io/github/license/your-username/express-sequelize-project">
-</p>
 
 <!-- Table of Contents -->
 ## Table of Contents
@@ -67,14 +58,13 @@ CLIENTID=738619888334-vqh3p0u5gkm96ea77bv2k5ufgto1g1ee.apps.googleusercontent.co
 }
 Run the application:
 
-bash
 Copy code
 npm start
 The server will start on port 5000 (or the port you specified in the .env file). You can access the API at http://localhost:5000.
 
-<!-- Usage -->
 Usage
 Use this project as a starting point for your Express.js and Sequelize applications.
 Define your database models in the models directory.
+Define your controllers  in the controller directory.
 Implement your API routes in the routes directory.
 
