@@ -1,11 +1,9 @@
 const db = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { OAuth2Client } = require('google-auth-library');
 
 const User = db.Users;
 
-const keys = require('../client_secret_738619888334-vqh3p0u5gkm96ea77bv2k5ufgto1g1ee.apps.googleusercontent.com.json');
 
 
 async function register(req, res) {
