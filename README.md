@@ -56,8 +56,11 @@ NODE_ENV=development
 CLIENTID=738619888334-vqh3p0u5gkm96ea77bv2k5ufgto1g1ee.apps.googleusercontent.com
   }
 }
-Run the application:
 
+
+
+
+Run the application:
 Copy code
 npm start
 The server will start on port 5000 (or the port you specified in the .env file). You can access the API at http://localhost:5000.
