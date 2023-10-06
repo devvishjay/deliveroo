@@ -70,7 +70,34 @@ async function login(req, res) {
     }
 }
 
+async function socialLogin(req, res) {
+    const { data} = req.body;
+    try {
+        const user = await Customers.findOne({ where: { email: data.email } });
+
+        let newUser;
+        if (!user) {
+             newUser= await Customers.create({
+                name: data.name,
+                email: data.email,
+                password:' ',
+            });
+             await newUser.save();
+        }
+        res.status(200).json({
+            message: "Social Login successfully",
+            user:user || newUser,
+           
+        });
+    }
+    catch (error) {
+        res.status(500).json({ error: 'Login failed' });
+        console.log("error",error)
+    }
+}
+
 module.exports = {
     register,
     login,
+    socialLogin
 };
